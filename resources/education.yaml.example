@@ -1,0 +1,19 @@
+education:
+
+  - type: graduation
+    institution: ABC University
+    address: Vasant Vihar, Delhi
+    degree: B.Tech CSE
+    batch: 2023-2027
+
+  - type: 12th
+    institution: XYZ Public School
+    address: Vasant Vihar, Delhi
+    board: CBSE
+    batch: 2023
+
+  - type: 10th
+    institution: XYZ Public School
+    address: Vasant Vihar, Delhi
+    board: CBSE
+    batch: 2021
