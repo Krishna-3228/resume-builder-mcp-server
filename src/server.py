@@ -16,6 +16,10 @@ def read_template(filename: str) -> str:
 
 # Resources
 ## 1. Profile
+@mcp.resource("profile://personal-info")
+def get_personal_info():
+    return read_resource("personal-info.yaml")
+
 @mcp.resource("profile://skills")
 def get_skills():
     return read_resource("skills.yaml")
@@ -116,6 +120,19 @@ def compile_resume() -> str:
             "Compilation failed: pdflatex was not found. "
             "Make sure LaTeX is installed and pdflatex is available in PATH."
         )
+
+@mcp.tool()
+def read_resume() -> str:
+    """
+    Read the last generated resume LaTeX.
+    """
+
+    tex_file = OUTPUT_DIR / "resume.tex"
+
+    if not tex_file.exists():
+        return "No resume exists yet."
+
+    return tex_file.read_text(encoding="utf-8")
 
 if __name__ == "__main__":
     mcp.run()
