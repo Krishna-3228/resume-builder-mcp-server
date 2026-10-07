@@ -1,6 +1,7 @@
 from pathlib import Path
 from fastmcp import FastMCP
 import subprocess
+from mcp.types import ToolAnnotations
 
 mcp = FastMCP("Resume Builder")
 
@@ -58,7 +59,14 @@ def get_template_2():
 # Resume Tools
 # -------------------------
 
-@mcp.tool()
+@mcp.tool(
+    annotations=ToolAnnotations(
+        read_only_hint=False,
+        destructive_hint=True,
+        idempotent_hint=True,
+        open_world_hint=False,
+    )
+)
 def write_resume(latex_content: str) -> str:
     """
     Write the generated LaTeX resume to output/resume.tex.
@@ -75,7 +83,14 @@ def write_resume(latex_content: str) -> str:
 
     return f"Resume written successfully to {output_file}"
 
-@mcp.tool()
+@mcp.tool(
+    annotations=ToolAnnotations(
+        read_only_hint=False,
+        destructive_hint=False,
+        idempotent_hint=True,
+        open_world_hint=False,
+    )
+)
 def compile_resume() -> str:
     """
     Compile output/resume.tex into output/resume.pdf using pdflatex.
@@ -121,7 +136,14 @@ def compile_resume() -> str:
             "Make sure LaTeX is installed and pdflatex is available in PATH."
         )
 
-@mcp.tool()
+@mcp.tool(
+    annotations=ToolAnnotations(
+        read_only_hint=True,
+        destructive_hint=False,
+        idempotent_hint=True,
+        open_world_hint=False,
+    )
+)
 def read_resume() -> str:
     """
     Read the last generated resume LaTeX.

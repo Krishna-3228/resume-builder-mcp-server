@@ -134,7 +134,7 @@ or a much more complex structure can be used.
 The LLM is responsible for interpreting the contents.
 The resources currently exposed by the MCP server are:
 ```text
-profile://persona-info
+profile://personal-info
 profile://skills
 profile://projects
 profile://education
@@ -176,7 +176,7 @@ Contains the MCP server implementation.
 It currently provides:
 #### Resources
 ```text
-profile://persona-info
+profile://personal-info
 profile://skills
 profile://projects
 profile://education
@@ -358,7 +358,7 @@ Also replace `/absolute/path/to/resume-mcp`
 
 ### Windows
 Go:
-`Claude Desktop ➞ Settings ➞ Developer ➞ Edit config`
+`Claude Desktop ➞ Settings ➞ Developer ➞ Edit config`.
 Add the following configuration to the `claude_desktop_config.json`
 ```json
 {
@@ -410,6 +410,7 @@ resources/
 ```
 You can refer to the `.yaml.example` files for examples of how to
 structure your profile information.
+
 ---
 # Usage
 
