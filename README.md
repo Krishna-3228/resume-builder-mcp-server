@@ -1,3 +1,6 @@
+[![M8ven Score](https://m8ven.ai/badge/mcp/krishna-3228/resume-builder-mcp-server)](https://m8ven.ai/mcp/krishna-3228/resume-builder-mcp-server?s=readme)
+
+
 # Resume Builder MCP Server
 
 A local [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that allows an LLM such as Claude to build and iteratively modify a LaTeX resume using personal profile data and reusable LaTeX templates.
